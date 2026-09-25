@@ -61,5 +61,5 @@ jobs:
         with:
           app-name: 'app-clinicapp-api-danuphon'
           slot-name: 'Production'
-          package: .
+          package: ./server
           
