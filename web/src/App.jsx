@@ -53,7 +53,7 @@ export default function App() {
     }
   }
 
-  async function onCancel(id) {if (!confirm('จะยกเลิกนัดนี้จริงไหม?')) return;setCancellingId(id);setError(null);try {const r = await fetch(`${API_BASE}/appointments/${id}`, { method: 'DELETE' });if (!r.ok) throw await r.json().catch(() => ({ error: 'http_error' }));await load();} catch (e) {setError(e.error || 'failed_to_cancel');} finally {setCancellingId(null);}}
+  async function onCancel(id) {if (!confirm('จะยกเลิกนัดนี้จริงไหม?')) return;setCancellingId(id);setError(null);try {const r = await fetch(`${API_BASE}/api/appointments/${id}`, { method: 'DELETE' });if (!r.ok) throw await r.json().catch(() => ({ error: 'http_error' }));await load();} catch (e) {setError(e.error || 'failed_to_cancel');} finally {setCancellingId(null);}}
   
   return (
     <main style={{ fontFamily: 'system-ui, sans-serif', maxWidth: 720, margin: '2rem auto', padding: '0 1rem' }}>
