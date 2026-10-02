@@ -141,7 +141,7 @@ app.delete('/api/appointments/:id', async (req, res, next) => {
       .input('id', sql.Int, id)
       .query('DELETE FROM appointments WHERE id = @id');
     if (r.rowsAffected[0] === 0) {
-      return res.status(404).json({ error: 'not_found id' });
+      return res.status(404).json({ error: 'not_found' });
     }
     res.json({ ok: true });
   } catch (e) { next(e); }
